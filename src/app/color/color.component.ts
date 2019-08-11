@@ -12,8 +12,12 @@ export class ColorComponent implements OnChanges {
   @Input() l: number;
 
   hex: string;
+  rgb: string;
+  hsl: string;
 
   ngOnChanges() {
     this.hex = convert.hsl.hex([this.h, this.s, this.l]);
+    this.hsl = `${this.h}, ${this.s}%, ${this.l}%`;
+    this.rgb = convert.hsl.rgb([this.h, this.s, this.l]).join(', ');
   }
 }
