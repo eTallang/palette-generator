@@ -17,7 +17,6 @@ export class AppComponent {
     { hue: 347, saturation: 54, lightness: 13 }
   ];
   mode: ShadeMode = 'monochromatic';
-  numberOfTrueColors = Math.round(this.colors.length / 2);
 
   generatePalette(): void {
     /**
@@ -46,6 +45,21 @@ export class AppComponent {
         break;
       }
       case 'triad': {
+        let hue2: number;
+        let hue3: number;
+        if (hue < 120) {
+          hue2 = hue + 120;
+          hue3 = hue2 + 120;
+        } else if (hue < 240) {
+          hue2 = hue - 120;
+          hue3 = hue + 120;
+        } else {
+          hue2 = hue - 120;
+          hue3 = hue2 - 120;
+        }
+        color.hue = index < 2 ? hue : index < 4 ? hue2 : hue3;
+        color.saturation = this.randomPercent();
+        color.lightness = this.randomPercent();
         break;
       }
       case 'complementary': {
@@ -56,9 +70,10 @@ export class AppComponent {
           oppositeHue = hue - 180;
         }
 
-        color.hue = index + 1 > this.numberOfTrueColors ? hue : oppositeHue;
+        color.hue = index + 1 > 3 ? hue : oppositeHue;
         color.saturation = this.randomPercent();
         color.lightness = this.randomPercent();
+        break;
       }
     }
   }
