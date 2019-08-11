@@ -3,6 +3,19 @@
 </header>
 <main>
   <div class="sidenav">
+    <h2>Color scheme</h2>
+    <div class="radio">
+      <input type="radio" name="spectrum" id="monochromatic" value="monochromatic" checked />
+      <label for="monochromatic">Monochromatic</label>
+    </div>
+    <div class="radio">
+      <input type="radio" name="spectrum" id="triad" value="triad" />
+      <label for="triad">Triad</label>
+    </div>
+    <div class="radio">
+      <input type="radio" name="spectrum" id="complementary" value="complementary" />
+      <label for="complementary">Complementary</label>
+    </div>
     <button (click)="generatePalette()" class="generate-palette-button">Create palette</button>
   </div>
 

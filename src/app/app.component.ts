@@ -10,11 +10,11 @@ type ShadeMode = 'monochromatic' | 'triad' | 'complementary';
 })
 export class AppComponent {
   colors: HslColor[] = [
-    { hue: 230, lightness: 50, saturation: 100 },
-    { hue: 230, lightness: 50, saturation: 100 },
-    { hue: 230, lightness: 50, saturation: 100 },
-    { hue: 230, lightness: 50, saturation: 100 },
-    { hue: 230, lightness: 50, saturation: 100 }
+    { hue: 347, saturation: 70, lightness: 62 },
+    { hue: 347, saturation: 90, lightness: 86 },
+    { hue: 347, saturation: 20, lightness: 58 },
+    { hue: 347, saturation: 66, lightness: 92 },
+    { hue: 347, saturation: 54, lightness: 13 }
   ];
   mode: ShadeMode = 'monochromatic';
 
@@ -32,10 +32,10 @@ export class AppComponent {
   }
 
   private randomHue(): number {
-    return Math.random() * 360;
+    return Math.round(Math.random() * 360);
   }
 
   private randomPercent(): number {
-    return Math.random() * 100;
+    return Math.round(Math.random() * 100);
   }
 }
