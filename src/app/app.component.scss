@@ -1,0 +1,30 @@
+header {
+  background-color: var(--primary-color);
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 50px;
+
+  h1 {
+    color: white;
+    vertical-align: bottom;
+  }
+}
+
+main {
+  margin: 40px 0;
+}
+
+.colors {
+  border-radius: 10px;
+  box-shadow: 10px 0 40px rgba(0, 0, 0, 0.12);
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+app-color {
+  flex: auto;
+}

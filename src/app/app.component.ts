@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HslColor } from './hsl-color';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'palette-generator';
+  colors: HslColor[] = [
+    { hue: 230, lightness: 50, saturation: 100 },
+    { hue: 230, lightness: 50, saturation: 100 },
+    { hue: 230, lightness: 50, saturation: 100 },
+    { hue: 230, lightness: 50, saturation: 100 },
+    { hue: 230, lightness: 50, saturation: 100 }
+  ];
 }

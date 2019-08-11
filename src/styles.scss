@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+@import './styles/colors.scss';
+@import './styles/typography.scss';
+
+body {
+    background-color: #fafafa;
+}
+
+a,
+button,
+p,
+div,
+span,
+input,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Blinker', sans-serif;
+}
