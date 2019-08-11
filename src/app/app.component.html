@@ -2,7 +2,16 @@
   <h1>Palette generator</h1>
 </header>
 <main>
+  <div class="sidenav">
+    <button (click)="generatePalette()" class="generate-palette-button">Create palette</button>
+  </div>
+
   <div class="colors">
-    <app-color *ngFor="let color of colors" [h]="color.hue" [s]="color.saturation" [l]="color.lightness"></app-color>
+    <app-color
+      *ngFor="let color of colors"
+      [h]="color.hue"
+      [s]="color.saturation"
+      [l]="color.lightness"
+    ></app-color>
   </div>
 </main>
