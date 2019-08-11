@@ -5,15 +5,15 @@
   <div class="sidenav">
     <h2>Color scheme</h2>
     <div class="radio">
-      <input type="radio" name="spectrum" id="monochromatic" value="monochromatic" checked />
+      <input type="radio" name="spectrum" id="monochromatic" value="monochromatic" [checked]="mode === 'monochromatic'" (click)="mode = 'monochromatic'" />
       <label for="monochromatic">Monochromatic</label>
     </div>
     <div class="radio">
-      <input type="radio" name="spectrum" id="triad" value="triad" />
+      <input type="radio" name="spectrum" id="triad" value="triad" [checked]="mode === 'triad'" (click)="mode = 'triad'" />
       <label for="triad">Triad</label>
     </div>
     <div class="radio">
-      <input type="radio" name="spectrum" id="complementary" value="complementary" />
+      <input type="radio" name="spectrum" id="complementary" value="complementary" [checked]="mode === 'complementary'" (click)="mode = 'complementary'" />
       <label for="complementary">Complementary</label>
     </div>
     <button (click)="generatePalette()" class="generate-palette-button">Create palette</button>
