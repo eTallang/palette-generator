@@ -17,8 +17,8 @@ export class ColorService {
      *     5. Close to black
      */
     color.hue = hue;
-    color.saturation = this.randomPercent();
-    color.lightness = this.randomPercent();
+    color.saturation = this.randomSaturation();
+    color.lightness = this.randomLightness();
   }
 
   createTriad(color: HslColor, index: number, hue: number): void {
@@ -35,8 +35,8 @@ export class ColorService {
       hue3 = hue2 - 120;
     }
     color.hue = index < 2 ? hue : index < 4 ? hue2 : hue3;
-    color.saturation = this.randomPercent();
-    color.lightness = this.randomPercent();
+    color.saturation = this.randomSaturation();
+    color.lightness = this.randomLightness();
   }
 
   createComplementary(color: HslColor, index: number, hue: number): void {
@@ -48,11 +48,17 @@ export class ColorService {
     }
 
     color.hue = index + 1 > 3 ? hue : oppositeHue;
-    color.saturation = this.randomPercent();
-    color.lightness = this.randomPercent();
+    color.saturation = this.randomSaturation();
+    color.lightness = this.randomLightness();
   }
 
-  private randomPercent(): number {
-    return Math.round(Math.random() * 100);
+  private randomSaturation(): number {
+    const saturation = Math.random() * 75;
+    return Math.round(saturation + 25);
+  }
+
+  private randomLightness(): number {
+    const lightness = Math.random() * 75;
+    return Math.round(lightness + (25 / 2));
   }
 }
